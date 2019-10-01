@@ -44,7 +44,7 @@ public class BuscarCliente extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         TPesquisa = new javax.swing.JTextField();
         BExcluir = new javax.swing.JButton();
-        BExcluir1 = new javax.swing.JButton();
+        BAlterarCli = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -67,7 +67,7 @@ public class BuscarCliente extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -91,10 +91,10 @@ public class BuscarCliente extends javax.swing.JFrame {
             }
         });
 
-        BExcluir1.setText("Alterar");
-        BExcluir1.addActionListener(new java.awt.event.ActionListener() {
+        BAlterarCli.setText("Alterar");
+        BAlterarCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BExcluir1ActionPerformed(evt);
+                BAlterarCliActionPerformed(evt);
             }
         });
 
@@ -114,7 +114,7 @@ public class BuscarCliente extends javax.swing.JFrame {
                         .addComponent(BPesquisar))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(BExcluir1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BAlterarCli, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -136,7 +136,7 @@ public class BuscarCliente extends javax.swing.JFrame {
                         .addComponent(BExcluir))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(319, 319, 319)
-                        .addComponent(BExcluir1)))
+                        .addComponent(BAlterarCli)))
                 .addContainerGap(54, Short.MAX_VALUE))
         );
 
@@ -207,12 +207,12 @@ public class BuscarCliente extends javax.swing.JFrame {
             
     }//GEN-LAST:event_BExcluirActionPerformed
 
-    private void BExcluir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BExcluir1ActionPerformed
+    private void BAlterarCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BAlterarCliActionPerformed
        int codigo = Integer.parseInt(""+TTabelaClientes.getValueAt(TTabelaClientes.getSelectedRow(), 0));
-       System.out.println(codigo+" botao");
        alterarcliente ac = new alterarcliente(codigo);
        ac.setVisible(true);
-    }//GEN-LAST:event_BExcluir1ActionPerformed
+       buscarclientes();
+    }//GEN-LAST:event_BAlterarCliActionPerformed
 
     private void TPesquisaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TPesquisaKeyReleased
         buscarclientes();
@@ -255,8 +255,8 @@ public class BuscarCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BAlterarCli;
     private javax.swing.JButton BExcluir;
-    private javax.swing.JButton BExcluir1;
     private javax.swing.JButton BPesquisar;
     private javax.swing.JTextField TPesquisa;
     private javax.swing.JTable TTabelaClientes;

@@ -98,10 +98,10 @@ public class CadastrarClientes {
                PreparedStatement p = con.prepareStatement(sql);
                p.setString(1, cliente.getNome());
                p.setInt(2, cliente.getTelefone());
-               p.setString(2, cliente.getCpf());
-               p.setInt(2, cliente.getRg());
-               p.setString(1, cliente.getEmail());
-               p.setInt(3, cliente.getCodigo());
+               p.setString(3, cliente.getCpf());
+               p.setInt(4, cliente.getRg());
+               p.setString(5, cliente.getEmail());
+               p.setInt(6, cliente.getCodigo());
                
                confirmar=p.executeUpdate();
                
